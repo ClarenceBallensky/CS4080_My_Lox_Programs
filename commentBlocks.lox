@@ -1,6 +1,3 @@
-// hello.lox
-print "Hello, Lox!";
-
 /* This is a comment block */
 
 /* This is a multi-
@@ -13,3 +10,12 @@ block
 
 /* This comment block * has * stars * and / slashes in the / middle of it */
 
+/* This comment block has a /* comment */ inside of it */
+
+/* This /* comment /* includes */ many */ comments. */
+
+/*Hello*/
+
+/**/
+
+//Hello
