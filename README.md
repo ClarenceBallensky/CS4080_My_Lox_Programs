@@ -12,7 +12,7 @@ These instructions are intended for my reference only, and should not be conside
 3. Install [Dart](https://dart.dev/get-dart)
 4. Clone the [Lox language repository](https://github.com/munificent/craftinginterpreters)
 5. In your Ubuntu terminal, switch to the proper directory for your Lox language repository
-    - For me, the command is: `cd /mnt/c/Users/prize/Crafting_Interpreters`
+    - For me, the command is: `cd /mnt/c/Users/prize/.vscode/Crafting_Interpreters`
 6. Run the commands `make get` and `make` in your Ubuntu terminal
 
 ### To run the java implementation of Lox (JLox)
