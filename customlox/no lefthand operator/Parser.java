@@ -459,11 +459,36 @@ class Parser {
     if (match(PLUS, MINUS, STAR, SLASH, BANG_EQUAL, EQUAL_EQUAL,
               GREATER, GREATER_EQUAL, LESS, LESS_EQUAL)) {
         
+        Token operator = previous();
         error(previous(), "Missing left-hand operand");
-        //parse right-hand side
-        term();
+        
+        //parse right hand side at appropriate precedence level
+        //use the same helper as the operator's level
+        Expr right;
+        switch (operator.type) {
+          case PLUS:
+          case MINUS:
+            right = term();
+            break;
+          case STAR:
+          case SLASH:
+            right = factor();
+            break;
+          case GREATER:
+          case GREATER_EQUAL:
+          case LESS:
+          case LESS_EQUAL:
+            right = comparison();
+            break;
+          case BANG_EQUAL:
+          case EQUAL_EQUAL:
+            right = equality();
+            break;
+          default:
+            right = unary();
+        }
 
-        return null;
+        return new Expr.Binary(null, operator, right);
     }
 
     if (match(NUMBER, STRING)) {
