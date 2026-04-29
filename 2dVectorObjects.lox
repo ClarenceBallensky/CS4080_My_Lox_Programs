@@ -1,0 +1,18 @@
+fun makeVector(x, y) {
+  fun dispatch(method, other) {
+    if (method == "x") return x;
+    if (method == "y") return y;
+
+    if (method == "add") {
+      // other is another vector (i.e., another closure)
+      return makeVector(
+        x + other("x", nil),
+        y + other("y", nil)
+      );
+    }
+
+    return nil; // unknown method
+  }
+
+  return dispatch;
+}
