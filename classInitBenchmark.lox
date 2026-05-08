@@ -1,0 +1,15 @@
+class Foo {
+  init(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+var start = clock();
+
+for (var i = 0; i < 1000000; i = i + 1) {
+  Foo(i, i, i);
+}
+
+print clock() - start;
