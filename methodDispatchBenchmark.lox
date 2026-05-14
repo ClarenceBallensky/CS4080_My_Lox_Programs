@@ -1,0 +1,23 @@
+class Counter {
+  init() {
+    this.value = 0;
+  }
+
+  inc() {
+    this.value = this.value + 1;
+  }
+
+  get() {
+    return this.value;
+  }
+}
+
+var c = Counter();
+
+var i = 0;
+while (i < 10000000) {
+  c.inc();
+  i = i + 1;
+}
+
+print c.get();

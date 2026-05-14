@@ -1,0 +1,10 @@
+var x = 1;
+var sum = 0;
+
+var i = 0;
+while (i < 20000000) {
+  sum = sum + x;
+  i = i + 1;
+}
+
+print sum;
